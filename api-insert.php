@@ -12,7 +12,7 @@ $Name = $data['Name'] ?? '';
 $emai = $data['email'] ?? '';
 
 if (!empty($Name) && !empty($email)) {
-    $sql = "INSERT INTO office (Name, email) VALUES ('{$Name}', '{$email}')";
+    $sql = "INSERT INTO office (Name, email) VALUES ('{$Name}', '{$emai}')";
     $result = mysqli_query($conn, $sql);
     
     if ($result) {
