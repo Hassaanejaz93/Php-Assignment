@@ -12,14 +12,14 @@ $Name = $data['Name'] ?? '';
 $emai = $data['email'] ?? '';
 
 if (!empty($Name) && !empty($email)) {
-    $sql = "INSERT INTO office (Name, email) VALUES ('{$Name}', '{$emai}')";
+    $sql = "INSERT INTO office (Name, email) VALUES ('{$Name}', '{$email}')";
     $result = mysqli_query($conn, $sql);
     
     if ($result) {
-        echo json_encode(array('success' => true, 'message' => 'Note inserted successfully'));
+        echo json_encode(array('success' => true, 'message' => 'office inserted successfully'));
     } else {
-        echo json_encode(array('success' => false, 'message' => 'Failed to insert note'));
+        echo json_encode(array('success' => false, 'message' => 'Failed to insert office'));
     }
 } else {
-    echo json_encode(array('success' => false, 'message' => 'Title and description are required'));
+    echo json_encode(array('success' => false, 'message' => 'Name and email are required'));
 }
